@@ -1,0 +1,41 @@
+A comunicação entre componentes na maioria das vezes é feita atraves de props, quando uma aplicação react tem um crescimento muito grande temos um problema de prop dilling.
+A passagem das props se torna confusa, pois não conseguimos manter o controle de 30 componentes cada um passando suas props especificas. Com isso utilizamos o context.
+
+exemplo sem context:
+import React from 'react';  
+
+const App = () => {  
+  const userName = "João";  
+  return <Parent userName={userName} />;  
+};  
+
+const Parent = ({ userName }) => <Child userName={userName} />;  
+const Child = ({ userName }) => <Grandchild userName={userName} />;  
+const Grandchild = ({ userName }) => <p>Nome: {userName}</p>;  
+
+export default App;
+
+
+exemplo com context:
+import React, { createContext, useContext } from 'react';  
+
+const UserContext = createContext();  
+
+const App = () => {  
+  return (  
+    <UserContext.Provider value="João">  
+      <Parent />  
+    </UserContext.Provider>  
+  );  
+};  
+
+const Parent = () => <Child />;  
+const Child = () => <Grandchild />;  
+const Grandchild = () => {  
+  const userName = useContext(UserContext);  
+  return <p>Nome: {userName}</p>;  
+};  
+
+export default App;
+
+ao inves de utilizarmos os nomes das props em si podemos utilizar seu grau de parentesco e facilitar o entendimento para um melhor desenvolvimento.
