@@ -16,7 +16,6 @@ class AlunoService {
       axios
         .get(url+"listar")
         .then((response) => {
-          //console.log(response.data)
           callback(response.data);
         })
         .catch((error) => console.log(error));
@@ -26,8 +25,6 @@ class AlunoService {
       axios
         .get(`http://localhost:3001/alunos/${id}`)
         .then((response) => {
-          //console.log(response.data)
-          //const { nome, curso, titulacao, ai, universidade } = response.data;
           callback(response.data);
         })
         .catch((error) => console.log(error));
@@ -37,8 +34,6 @@ class AlunoService {
       axios
         .put(`http://localhost:3001/alunos/${id}`, alunoEditado)
         .then((response) => {
-          //console.log(response)
-          //navigate("/alunos/listar");
           callback(response);
         })
         .catch((error) => console.log(error));
