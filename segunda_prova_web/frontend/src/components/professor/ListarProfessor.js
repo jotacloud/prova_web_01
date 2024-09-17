@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import "../../css/crud.css";
-import ProfessorService from "../../../src/services/ProfessorService";
+import ProfessorService from "../../services/ProfessorService";
 
 import { useState, useEffect } from "react";
 

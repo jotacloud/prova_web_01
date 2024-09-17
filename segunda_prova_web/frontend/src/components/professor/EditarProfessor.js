@@ -1,4 +1,4 @@
-import ProfessorService from "../../../src/services/ProfessorService";
+import ProfessorService from "../../services/ProfessorService";
 
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
