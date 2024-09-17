@@ -1,12 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Home from "./components/Home";
-import CriarProfessor from "./components/professor/CriarProfessor" 
-import ListarProfessor from "./components/professor/ListarProfessor";
-import EditarProfessor from "./components/professor/EditarProfessor";
 import ListarAluno from "./components/aluno/ListarAluno";
 import CriarAluno from "./components/aluno/CriarAluno";
-
+import EditarAluno from "./components/aluno/EditarAluno";
 const router = createBrowserRouter([
     {
         path:"/",
@@ -19,6 +16,10 @@ const router = createBrowserRouter([
             {
                 path:"alunos/criar",
                 element:<CriarAluno />
+            },
+            {
+                path:"alunos/editar",
+                element:<EditarAluno />
             },
         ]
     }
