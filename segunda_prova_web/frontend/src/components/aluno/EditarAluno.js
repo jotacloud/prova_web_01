@@ -11,7 +11,7 @@ const EditarAluno = () => {
   const navigate = useNavigate(); // Para redirecionar após edição
 
   useEffect(() => {
-    // Buscar dados do aluno pelo ID ao carregar a página
+    
     axios.get(`http://localhost:3001/alunos/${id}`)
       .then((response) => {
         const { nome, curso, ira } = response.data;
@@ -29,7 +29,7 @@ const EditarAluno = () => {
     axios.put(`http://localhost:3001/alunos/atualizar/${id}`, alunoEditado)
       .then((response) => {
         console.log(response);
-        navigate("/alunos/listar"); // Redireciona para a lista de alunos após a atualização
+        navigate("/alunos/listar");
       })
       .catch((error) => console.log(error));
   };

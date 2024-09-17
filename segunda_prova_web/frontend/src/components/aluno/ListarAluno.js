@@ -73,6 +73,7 @@ const ListarAluno = () => {
             <th scope="col">Nome</th>
             <th scope="col">Curso</th>
             <th scope="col">IRA</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>{corpoTabela()}</tbody>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:3001/alunos/";
+const url = "http://localhost:3001/professores/";
 
 class AlunoService {
     static getAlunosAxiosAsyncAwait = async (callback) => {
@@ -12,18 +12,18 @@ class AlunoService {
       }
     };
   
-    static getAlunosAxiosThenCatch = (callback) => {
-      axios
-        .get(url+"listar")
-        .then((response) => {
-          callback(response.data);
-        })
-        .catch((error) => console.log(error));
-    };
+    // static getAlunosAxiosThenCatch = (callback) => {
+    //   axios
+    //     .get(url+"listar")
+    //     .then((response) => {
+    //       callback(response.data);
+    //     })
+    //     .catch((error) => console.log(error));
+    // };
   
     static getAlunoById = (id, callback) => {
       axios
-        .get(`http://localhost:3001/alunos/${id}`)
+        .get(`http://localhost:3001/professores/${id}`)
         .then((response) => {
           callback(response.data);
         })

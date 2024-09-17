@@ -8,9 +8,6 @@ const CriarAluno = () => {
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("RC")
     const [ira, setIra] = useState("")
-    // const [ai, setAi] = useState({es:false,lc:false,mc:false,al:false})
-    // const [universidade, setUniversidade] = useState({ifce:false,ufc:false})
-
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -19,7 +16,7 @@ const CriarAluno = () => {
     }
 
     const postAlunoAxiosThenCatch = (novoAluno) => {
-        axios.post("http://localhost:3001/alunos/criar", novoAluno)
+        axios.post("http://localhost:3001/professores/criar", novoAluno)
         .then((response) => {
             console.log(response)
         })
