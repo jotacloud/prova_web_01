@@ -39,7 +39,7 @@ const ListarAluno = () => {
             <th scope="row">{aluno._id}</th>
             <td>{aluno.nome}</td>
             <td>{aluno.curso}</td>
-            <td>{aluno.titulacao}</td>
+            <td>{aluno.ira}</td>
             <td className="button-content">
 
               <Link
@@ -72,8 +72,7 @@ const ListarAluno = () => {
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Curso</th>
-            <th scope="col">Titulação</th>
-            <th scope="col"></th>
+            <th scope="col">IRA</th>
           </tr>
         </thead>
         <tbody>{corpoTabela()}</tbody>

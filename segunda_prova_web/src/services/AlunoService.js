@@ -3,7 +3,7 @@ import axios from "axios";
 const url = "http://localhost:3001/alunos/";
 
 class AlunoService {
-    static getAlunoFetchAsyncAwait = async (callback) => {
+    static getAlunosFetchAsyncAwait = async (callback) => {
       try {
         const response = await fetch(url+"listar");
         const json = await response.json();
@@ -13,7 +13,7 @@ class AlunoService {
       }
     };
   
-    static getAlunoFetchThenCatch = (callback) => {
+    static getAlunosFetchThenCatch = (callback) => {
       fetch(url+"listar")
         .then((response) => {
           return response.json();
@@ -25,7 +25,7 @@ class AlunoService {
         .catch((error) => console.log(error));
     };
   
-    static getAlunoAxiosAsyncAwait = async (callback) => {
+    static getAlunosAxiosAsyncAwait = async (callback) => {
       try {
         const response = await axios.get(url+"listar");
         callback(response.data);
@@ -34,7 +34,7 @@ class AlunoService {
       }
     };
   
-    static getAlunoAxiosThenCatch = (callback) => {
+    static getAlunosAxiosThenCatch = (callback) => {
       axios
         .get(url+"listar")
         .then((response) => {
