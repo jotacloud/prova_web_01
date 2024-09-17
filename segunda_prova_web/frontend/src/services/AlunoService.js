@@ -3,28 +3,6 @@ import axios from "axios";
 const url = "http://localhost:3001/alunos/";
 
 class AlunoService {
-    static getAlunosFetchAsyncAwait = async (callback) => {
-      try {
-        const response = await fetch(url+"listar");
-        const json = await response.json();
-        callback(json);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  
-    static getAlunosFetchThenCatch = (callback) => {
-      fetch(url+"listar")
-        .then((response) => {
-          return response.json();
-        })
-        .then((json) => {
-          //console.log(json)
-          callback(json);
-        })
-        .catch((error) => console.log(error));
-    };
-  
     static getAlunosAxiosAsyncAwait = async (callback) => {
       try {
         const response = await axios.get(url+"listar");
